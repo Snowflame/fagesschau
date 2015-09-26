@@ -1,0 +1,5 @@
+file /Users/mborkows/Desktop/hackthon/fagesschau/fagesschau/assets/intro.mp4
+file /Users/mborkows/Desktop/hackthon/fagesschau/fagesschau/assets/video/31.mp4
+file /Users/mborkows/Desktop/hackthon/fagesschau/fagesschau/assets/video/32.mp4
+file /Users/mborkows/Desktop/hackthon/fagesschau/fagesschau/assets/video/33.mp4
+file /Users/mborkows/Desktop/hackthon/fagesschau/fagesschau/assets/video/35.mp4
