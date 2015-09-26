@@ -20,7 +20,6 @@ module.exports = {
     			time += feedcontent.videos[i].outMilli;
 	    		Video.create({url: feedcontent.videos[i].mediadata[5].h264xl, date:feedcontent.videos[i].date, videoid: feedcontent.videos[i].sophoraId, length: feedcontent.videos[i].outMilli, title: feedcontent.videos[i].headline}).exec(function(error, video){
 					video.file = fs.createWriteStream("assets/video/"+video.id+".mp4");
-					console.log(video.url);
 					video.request = http.get(video.url, function(response) {
 					  response.pipe(video.file);
 					});
@@ -34,11 +33,12 @@ module.exports = {
   	var request = require('request');
   	var http = require('http');
 	var fs = require('fs');
-	var filecontent = "file /Users/mborkows/Desktop/hackthon/fagesschau/fagesschau/assets/intro.mp4\n";
+	var filecontent = "file /Users/mborkows/Desktop/hackthon/fagesschau/fagesschau/assets/vidsq/intro.mp4\n";
 	fs.readdir("assets/video/", function(err, files){
 		for(var i = 0; i < files.length; i++){
 			if(/.*\.mp4/.test(files[i])){
 				filecontent += "file /Users/mborkows/Desktop/hackthon/fagesschau/fagesschau/assets/video/" + files[i]+ "\n";
+				filecontent += "file /Users/mborkows/Desktop/hackthon/fagesschau/fagesschau/assets/vidsq/transition.mp4\n";
 			}
 		}
 		fs.writeFile("concat.txt", filecontent, function(err) {
