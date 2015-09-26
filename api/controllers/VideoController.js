@@ -33,12 +33,16 @@ module.exports = {
   	var request = require('request');
   	var http = require('http');
 	var fs = require('fs');
-	var filecontent = "file /Users/mborkows/Desktop/hackthon/fagesschau/fagesschau/assets/vidsq/intro.mp4\n";
+
+	var filecontent = "file assets/vidsq/intro.mp4\n";
 	fs.readdir("assets/video/", function(err, files){
 		for(var i = 0; i < files.length; i++){
 			if(/.*\.mp4/.test(files[i])){
-				filecontent += "file /Users/mborkows/Desktop/hackthon/fagesschau/fagesschau/assets/video/" + files[i]+ "\n";
-				filecontent += "file /Users/mborkows/Desktop/hackthon/fagesschau/fagesschau/assets/vidsq/transition.mp4\n";
+				filecontent += "file assets/video/" + files[i]+ "\n";
+				filecontent += "file assets/vidsq/transition.mp4\n";
+
+	
+
 			}
 		}
 		fs.writeFile("concat.txt", filecontent, function(err) {
