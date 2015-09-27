@@ -20,10 +20,10 @@ var Template = function() { return `<?xml version="1.0" encoding="UTF-8" ?>
     </background>
     <banner>
       <stack>
-        <title>Title</title>
-        <subtitle>Subtitle</subtitle>
-        <text>Text</text>
-        <description allowsZooming="true" template="templates/AlertWithDescription.xml" presentation="modalDialogPresenter">Blindtext</description>
+        <title>Dein persönliches Fernsehen</title>
+        <subtitle>27. September 2015, 13:25 Uhr</subtitle>
+        <text>Heute ist die Sendung <%=duration%> Minuten lang.</text>
+        <description allowsZooming="true" template="templates/AlertWithDescription.xml" presentation="modalDialogPresenter">Hier ist deine persönliche Sendung mit den wichtigsten Nachrichten, den Geschichten aus deiner Nähe sowie Videos, die Freunde und Familie mit Dir teilen wollen.</description>
         <row>
           <buttonLockup type="play">
             <badge src="resource://button-play" class="whiteButton" />
@@ -44,7 +44,7 @@ var Template = function() { return `<?xml version="1.0" encoding="UTF-8" ?>
       <section>
       <% for(var i=0; i<chapters.length; i++) {%>
         <lockup videoURL="<%= chapters[i].url %>">
-          <img src="http://192.168.178.55:1337/images/teaser/<%= chapters[i].id%>.mp4.png" width="252" height="160" />
+          <img src="http://192.168.178.58:1337/images/teaser/<%= chapters[i].id%>.mp4.png" width="252" height="160" />
           <title class="showTextOnHighlight"><%= chapters[i].name %></title>
           <overlay>
             
