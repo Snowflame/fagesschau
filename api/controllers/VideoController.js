@@ -33,7 +33,6 @@ module.exports = {
   	var request = require('request');
   	var http = require('http');
 	var fs = require('fs');
-
 	var filecontent = "file assets/vidsq/intro.mp4\n";
 	fs.readdir("assets/video/", function(err, files){
 		for(var i = 0; i < files.length; i++){

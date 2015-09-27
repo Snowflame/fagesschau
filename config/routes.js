@@ -42,6 +42,10 @@ module.exports.routes = {
   'get /renderVideo': {
     controller: 'Video',
     action: 'render'
+  },
+  'get /api/v1/overview': {
+    controller: 'ChapterController',
+    action: 'getChapters'
   }
 
   /***************************************************************************
