@@ -34,9 +34,10 @@ module.exports = {
 			for (var u=0;u<videos.length;u++) {
 				var vid = {
 					name:videos[u].title,
-					url:videos[u].url,
-					imageURL: "https://www.luxuspur2014.de/documents/image/28/2807/jb-yy-28-0001-1600.jpg",
+					url:"http://192.168.178.55:1337/videofiles/"+videos[u].id,
+					imageURL: "http://192.168.178.55:1337/images/teaser/"+videos[u].id+".mp4.png",
 					description:"",
+					id:videos[u].id,
 					starttime:timecode,
 					duration:videos[u].length/1000
 				}

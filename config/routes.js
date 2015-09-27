@@ -46,7 +46,16 @@ module.exports.routes = {
   'get /api/v1/overview': {
     controller: 'ChapterController',
     action: 'getChapters'
+  },
+  'get /generateTeaser':{
+     controller: 'Video',
+     action: 'generateTeaser'
+  },
+  'get /videofiles/:id': {
+    controller: 'Video',
+    action:'sendFile'
   }
+
 
   /***************************************************************************
   *                                                                          *

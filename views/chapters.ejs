@@ -43,88 +43,27 @@ var Template = function() { return `<?xml version="1.0" encoding="UTF-8" ?>
       </header>
       <section>
       <% for(var i=0; i<chapters.length; i++) {%>
-        <lockup>
-          <img src="${this.BASEURL}resources/images/italy/italy_10.jpg" width="252" height="160" />
+        <lockup videoURL="<%= chapters[i].url %>">
+          <img src="http://192.168.178.55:1337/images/teaser/<%= chapters[i].id%>.mp4.png" width="252" height="160" />
           <title class="showTextOnHighlight"><%= chapters[i].name %></title>
           <overlay>
-            <progressBar value="0.1" />
+            
           </overlay>
           <relatedContent>
             <infoTable>
               <header>
-                <title>Info Header 1</title>
+                <title></title>
               </header>
               <info>
                 <header>
-                  <title>Title 1</title>
+                  <title></title>
                 </header>
-                <description allowsZooming="true">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</description>
+                <description allowsZooming="true"><%= chapters[i].name %></description>
               </info>
             </infoTable>
           </relatedContent>
         </lockup>
       <% } %>
-        
-      </section>
-    </shelf>
-    <shelf>
-      <header>
-        <title>Shelf Header</title>
-      </header>
-      <section>
-        <lockup>
-          <img src="${this.BASEURL}resources/images/music/music_1.lcr" width="250" height="250" />
-          <title class="showTextOnHighlight">Title 1</title>
-        </lockup>
-        <lockup>
-          <img src="${this.BASEURL}resources/images/music/music_2.lcr" width="250" height="250" />
-          <title class="showTextOnHighlight">Title 2</title>
-        </lockup>
-        <lockup>
-          <img src="${this.BASEURL}resources/images/music/music_3.lcr" width="250" height="250" />
-          <title class="showTextOnHighlight">Title 3</title>
-        </lockup>
-        <lockup>
-          <img src="${this.BASEURL}resources/images/music/music_4.lcr" width="250" height="250" />
-          <title class="showTextOnHighlight">Title 4</title>
-        </lockup>
-        <lockup>
-          <img src="${this.BASEURL}resources/images/music/music_5.lcr" width="250" height="250" />
-          <title class="showTextOnHighlight">Title 5</title>
-        </lockup>
-        <lockup>
-          <img src="${this.BASEURL}resources/images/music/music_6.lcr" width="250" height="250" />
-          <title class="showTextOnHighlight">Title 6</title>
-        </lockup>
-        <lockup>
-          <img src="${this.BASEURL}resources/images/music/music_7.lcr" width="250" height="250" />
-          <title class="showTextOnHighlight">Title 7</title>
-        </lockup>
-      </section>
-    </shelf>
-    <shelf class="shelfLayout" >
-      <header>
-        <title>Shelf Header</title>
-      </header>
-      <section>
-        <ratingCard>
-          <title>Title</title>
-          <ratingBadge value="0.7"></ratingBadge>
-          <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</description>
-        </ratingCard>
-        <reviewCard>
-          <title>Title 1</title>
-          <subtitle>Subtitle 1</subtitle>
-          <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</description>
-        </reviewCard>
-        <reviewCard>
-          <title>Title 2</title>
-          <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</description>
-        </reviewCard>
-        <reviewCard>
-          <subtitle>Subtitle 3</subtitle>
-          <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</description>
-        </reviewCard>
       </section>
     </shelf>
   </productBundleTemplate>

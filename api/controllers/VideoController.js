@@ -6,6 +6,11 @@
  */
 
 module.exports = {
+  sendFile: function(req,res) {
+  	var id = req.param("id");
+ 
+  	res.sendfile("assets/video/"+id+".mp4");
+  },
   getVideo: function (req, res) {
   	var request = require('request');
   	var http = require('http');
@@ -28,6 +33,29 @@ module.exports = {
     	};
     	return res.send('ok');
   	});
+  },
+  generateTeaser: function(req, res) {
+    var cmd;
+	var fs = require('fs');
+	var exec = require('child_process').exec;
+	/*fs.readdir("assets/video/", function(err, files){
+		cmd = "./ffmpeg -i assets/video/"+video.id+".mp4 -ss 00:00:01.000 -vframes 1 assets/images/teaser/" +video.id+".png";
+		exec(cmd, function(error, stdout, stderr) {
+			console.log(error, stdout, stderr);
+		});*/
+		fs.readdir("assets/video/", function(err, files){
+			for(var i = 0; i < files.length; i++){
+				if(/.*\.mp4/.test(files[i])){
+					console.log(files[i]);
+					cmd = "./ffmpeg -i assets/video/"+files[i]+" -ss 00:00:01.000 -vframes 1 assets/images/teaser/"+files[i]+".png";
+					exec(cmd, function(error, stdout, stderr) {
+					  console.log(error, stdout, stderr);
+					});
+				}
+			}
+		});
+    return res.send('ok');
+
   },
   render: function (req, res) {
   	var request = require('request');
